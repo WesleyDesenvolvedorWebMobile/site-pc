@@ -1,0 +1,1779 @@
+
+<!doctype html >
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt"
+      class="">
+<head>
+    
+<title>Wesley-Desenvolvedor-Web </title>
+
+<script type="text/javascript">
+    window._currentDevice = 'desktop';
+    window.Parameters = window.Parameters || {
+        AjaxContainer: 'div.dmBody',
+        WrappingContainer: 'div.dmOuter',
+        HomeUrl: 'https://wesleydesenvolvedor.multiscreensite.com/',
+        AccountUUID: '27238958a33142f1b8def71b2ee5b452',
+        SystemID: 'US_DIRECT_PRODUCTION',
+        SiteAlias: 'da8a4922',
+        SiteId: '1763321',
+        SiteType: atob('RFVEQU9ORQ=='),
+        ExternalUid: null,
+        IsSiteMultilingual: false,
+        InitialPostAlias: '',
+        InitialDynamicItem: '',
+        InitialPageAlias: 'about',
+        InitialEncodedPageAlias: 'YWJvdXQ=',
+        CurrentPageUrl: '',
+        IsCurrentHomePage: false,
+        AllowAjax: true,
+        AfterAjaxCommand: null,
+        HomeLinkText: 'Back To Home',
+        UseGalleryModule: false,
+        CurrentThemeName: 'Layout Theme',
+        ThemeVersion: '1170',
+        DefaultPageAlias: '',
+        RemoveDID: true,
+        WidgetStyleID : null,
+        IsHeaderFixed: false,
+        IsHeaderSkinny: false,
+        IsBfs: true,
+        LayoutParams : {
+            _navigationAnimationStyle: 'slide',
+            _manifestId : 10600,
+            _device : 'desktop'
+        },
+        StorePageAlias: 'null',
+        StorePath: '',
+        StoreId: 'null',
+        StoreVersion: 0,
+        StoreBaseUrl: '',
+        StoreCleanUrl: true,
+        StoreDisableScrolling: true,
+        NotificationSubDomain: 'null',
+        HasCustomDomain: false,
+        showCookieNotification: false,
+        cookiesNotificationMarkup: 'null',
+        translatedPageUrl: '',
+        isFastMigrationSite: false,
+        sidebarPosition: 'NA',
+        currentLanguage: 'pt',
+        NavItems: 'W3sidGl0bGUiOiJQw6FnaW5hIEluaWNpYWwiLCJhbGlhcyI6ImhvbWUiLCJwYXRoIjoiLyIsImluTmF2aWdhdGlvbiI6dHJ1ZSwic3ViTmF2IjpbXX0seyJ0aXRsZSI6IlNvYnJlIiwiYWxpYXMiOiJhYm91dCIsInBhdGgiOiIvYWJvdXQiLCJpbk5hdmlnYXRpb24iOnRydWUsInN1Yk5hdiI6W119LHsidGl0bGUiOiJHYWxlcmlhIiwiYWxpYXMiOiJnYWxsZXJ5IiwicGF0aCI6Ii9nYWxsZXJ5IiwiaW5OYXZpZ2F0aW9uIjp0cnVlLCJzdWJOYXYiOltdfSx7InRpdGxlIjoiQ29udGF0byIsImFsaWFzIjoiY29udGFjdCIsInBhdGgiOiIvY29udGFjdCIsImluTmF2aWdhdGlvbiI6dHJ1ZSwic3ViTmF2IjpbXX0seyJ0aXRsZSI6IkxvZ2luIiwiYWxpYXMiOiJsb2dpbiIsInBhdGgiOiIvbG9naW4iLCJpbk5hdmlnYXRpb24iOnRydWUsInN1Yk5hdiI6W119XQ==',
+        errors: {
+            general: 'Houve um erro ao conectar à página.<br/> Verifique se você não está off-line.',
+            password: 'Nome/combinação de senha incorreta',
+            tryAgain: 'Tente novamente'
+        },
+        NavigationAreaParams: {
+            ShowBackToHomeOnInnerPages: true,
+            NavbarSize: 5,
+            NavbarLiveHomePage: 'https://wesleydesenvolvedor.multiscreensite.com/',
+            BlockContainerSelector: '.dmBody',
+            NavbarSelector: '#dmNav:has(a)',
+            SubNavbarSelector: '#subnav_main'
+        },
+        hasCustomCode: false,
+        planID: 7,
+        disableTracking: false
+    };
+
+    window.Parameters.LayoutID = {};
+    window.Parameters.LayoutID[window._currentDevice] = 23;
+    window.Parameters.LayoutVariationID = {};
+    window.Parameters.LayoutVariationID[window._currentDevice] = 5;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Injecting site-wide to the head -->
+
+
+
+<!-- End Injecting site-wide to the head -->
+
+<!-- ========= Meta Tags ========= -->
+<!-- PWA settings -->
+<script>
+    function toHash(str) {
+        var hash = 5381, i = str.length;
+        while (i) {
+            hash = hash * 33 ^ str.charCodeAt(--i)
+        }
+        return hash >>> 0
+    }
+</script>
+<script>
+    (function(global) {
+    //const cacheKey = global.cacheKey;
+    const isOffline = 'onLine' in navigator && navigator.onLine === false;
+    const hasServiceWorkerSupport = 'serviceWorker' in navigator;
+    if (isOffline) {
+        console.log('offline mode');
+    }
+    if (!hasServiceWorkerSupport) {
+        console.log('service worker is not supported');
+    }
+    if (hasServiceWorkerSupport && !isOffline) {
+        window.addEventListener('load', function() {
+            const serviceWorkerPath = '/runtime-service-worker.js?v=2';
+            navigator.serviceWorker
+                .register(serviceWorkerPath, { scope: './' })
+                .then(
+                    function(registration) {
+                        // Registration was successful
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    },
+                    function(err) {
+                        // registration failed :(
+                        console.log('ServiceWorker registration failed: ', err);
+                    }
+                )
+                .catch(function(err) {
+                    console.log(err);
+                });
+        });
+
+        // helper function to refresh the page
+        var refreshPage = (function() {
+            var refreshing;
+            return function() {
+                if (refreshing) return;
+                // prevent multiple refreshes
+                var refreshkey = 'refreshed' + location.href;
+                var prevRefresh = localStorage.getItem(refreshkey);
+                if (prevRefresh) {
+                    localStorage.removeItem(refreshkey);
+                    if (Date.now() - prevRefresh < 30000) {
+                        return; // dont go into a refresh loop
+                    }
+                }
+                refreshing = true;
+                localStorage.setItem(refreshkey, Date.now());
+                console.log('refereshing page');
+                window.location.reload();
+            };
+        })();
+
+        function messageServiceWorker(data) {
+            return new Promise(function(resolve, reject) {
+                if (navigator.serviceWorker.controller) {
+                    var worker = navigator.serviceWorker.controller;
+                    var messageChannel = new MessageChannel();
+                    messageChannel.port1.onmessage = replyHandler;
+                    worker.postMessage(data, [messageChannel.port2]);
+                    function replyHandler(event) {
+                        resolve(event.data);
+                    }
+                } else {
+                    resolve();
+                }
+            });
+        }
+    }
+})(window);
+</script>
+<!-- Add manifest -->
+<link rel="manifest" href="/manifest.json">
+<!-- Tell the browser it's a PWA -->
+<meta name="mobile-web-app-capable" content="yes">
+<!-- Tell iOS it's a PWA -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<!-- End PWA settings -->
+
+
+<meta http-equiv="Content-type" content="text/html;charset=utf-8">
+<meta charset="utf-8">
+
+<link rel="canonical" href="http://wesleydesenvolvedor.multiscreensite.com/about">
+
+<meta id="view" name="viewport"
+      content=", initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover"/>
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Sobre
+</title>
+
+<!--Add favorites icons-->
+
+<link rel="icon" type="image/x-icon" href="https://irp-cdn.multiscreensite.com/da8a4922/site_favicon_16_1588846518800.ico"/>
+
+<!-- End favorite icons -->
+
+<link rel="preconnect" href="https://ssl.google-analytics.com" crossorigin />
+
+
+
+<!-- render the required CSS and JS in the head section -->
+<script>
+    window.SystemID = 'US_DIRECT_PRODUCTION';
+
+    if(!window.dmAPI) {
+        window.dmAPI = {
+            registerExternalRuntimeComponent: function() {
+            },
+            getCurrentDeviceType: function() {
+                return window._currentDevice;
+            }
+        };
+    }
+
+    if (!window.requestIdleCallback) {
+        window.requestIdleCallback = function (fn) {
+            setTimeout(fn, 0);
+        }
+    }
+
+    function loadCSS(link) {
+        try {
+            var urlParams = new URLSearchParams(window.location.search);
+            var noCSS = !!urlParams.get('nocss');
+            var cssTimeout = urlParams.get('cssTimeout') || 0;
+
+            if (noCSS) {
+                return;
+            }
+            requestIdleCallback(function () {
+                window.setTimeout(function () {
+                    link.onload = null;
+                    link.rel = 'stylesheet';
+                    link.type = 'text/css'
+                }, parseInt(cssTimeout, 10));
+            });
+        } catch (e) {/* Never fail - this is just a tool for measurements */}
+    }
+
+</script>
+<script>
+(function(n){"use strict";if(!n.l){n.l=function(){}}var o=loadCSS.t={};o.o=function(){var l;try{l=n.document.createElement("link").relList.supports("preload")}catch(e){l=false}return function(){return l}}();o.i=function(e){var l=e.media||"all";function enableStylesheet(){if(e.addEventListener){e.removeEventListener("load",enableStylesheet)}else if(e.attachEvent){e.detachEvent("onload",enableStylesheet)}e.setAttribute("onload",null);e.media=l}if(e.addEventListener){e.addEventListener("load",enableStylesheet)}else if(e.attachEvent){e.attachEvent("onload",enableStylesheet)}setTimeout(function(){e.rel="stylesheet";e.media="only x"});setTimeout(enableStylesheet,3e3)};o.s=function(){if(o.o()){return}var e=n.document.getElementsByTagName("link");for(var l=0;l<e.length;l++){var t=e[l];if(t.rel==="preload"&&t.getAttribute("as")==="style"&&!t.getAttribute("data-loadcss")){t.setAttribute("data-loadcss",true);o.i(t)}}};if(!o.o()){o.s();var e=n.setInterval(o.s,500);if(n.addEventListener){n.addEventListener("load",function(){o.s();n.clearInterval(e)})}else if(n.attachEvent){n.attachEvent("onload",function(){o.s();n.clearInterval(e)})}}if(typeof exports!=="undefined"){exports.l=loadCSS}else{n.l=loadCSS}})(typeof global!=="undefined"?global:this);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://static-cdn.multiscreensite.com/mnlt/production/1280/_dm/s/rt/dist/css/d-css-foundation.min.css" />
+
+
+
+<!-- Google Fonts Include -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Molengo:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic|Roboto:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic|Lusitana:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic|Cabin:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic|Great+Vibes:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic|Montserrat:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic|Roboto:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic|Dynalight:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic|Playball:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic|Source+Sans+Pro:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic&amp;subset=latin-ext&amp;display=swap"  />
+
+<link type="text/css" rel="stylesheet" href="https://dd-cdn.multiscreensite.com/fonts/additional-fonts.css"  />
+
+
+<link rel="stylesheet" type="text/css" href="https://static-cdn.multiscreensite.com/mnlt/production/1280/_dm/s/rt/dist/css/css-font-package-v2.min.css" />
+
+
+<!-- RT CSS Include d-css-runtime-desktop-one-package-new-->
+<link rel="stylesheet" type="text/css" href="https://static-cdn.multiscreensite.com/mnlt/production/1280/_dm/s/rt/dist/css/d-css-runtime-desktop-one-package-new.min.css" />
+
+<!-- End of RT CSS Include -->
+
+
+
+    
+       <link type="text/css" rel="stylesheet" href="https://irp-cdn.multiscreensite.com/WIDGET_CSS/production_1280/4b28541d819dfc4d03b7fa233cbf2f34.css" id="widgetCSS" />
+    
+
+
+
+<!-- This is populated in Ajax navigation -->
+<style id="pageAdditionalWidgetsCss" type="text/css">
+</style>
+
+
+
+
+<!-- Site CSS -->
+<link type="text/css" rel="stylesheet" href="//irp-cdn.multiscreensite.com/da8a4922/files/da8a4922_1.min.css?v=293" id="siteGlobalCss" />
+
+
+<style id="customWidgetStyle" type="text/css">
+    
+    .audioIframe{
+    width: 100%;
+    height: 300px;
+}
+
+.audioIframe.big-layout-mixcloud, .audioIframe.-layout-mixcloud{
+    height: 400px;
+}
+
+.audioIframe.medium-layout-mixcloud{
+    height: 120px;
+}
+
+.audioIframe.small-layout-mixcloud{
+    height: 60px;
+}
+
+.audioIframe.big-layout-soundcloud, .audioIframe.-layout-soundcloud{
+    height: 300px;
+}
+
+.audioIframe.medium-layout-soundcloud{
+    height: 166px;
+}
+
+
+
+.emptyAudio{
+    background-color: #dfdfdf;
+    font-family: Roboto;
+    font-size: 17px;
+    text-align: center;
+    color: #9f9f9f;
+    min-height: 173px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+    
+</style>
+<style id="innerPagesStyle" type="text/css">
+    
+</style>
+
+<style id="additionalGlobalCss" type="text/css">
+</style>
+
+<style id="pagestyle" type="text/css">
+    *.u_1046925346
+{
+	background-image:none !important;
+	background-color:rgba(0,0,0,0) !important;
+	background-position:0 0 !important;
+	background-size:auto !important;
+	background-repeat:repeat !important;
+	padding-top:0 !important;
+	padding-bottom:0 !important;
+	padding-right:30px !important;
+	padding-left:0 !important;
+	margin:0 !important;
+	text-align:start !important;
+	color:rgb(83,83,83) !important;
+}
+*.u_1199057175
+{
+	background-image:none !important;
+	background-color:rgba(0,0,0,0) !important;
+	background-position:0 0 !important;
+	background-size:auto !important;
+	background-repeat:repeat !important;
+	padding-top:70px !important;
+	padding-bottom:15px !important;
+	padding-right:25px !important;
+	padding-left:25px !important;
+	margin:0 !important;
+	text-align:start !important;
+	color:rgb(83,83,83) !important;
+}
+*.u_1406817268
+{
+	background-image:none !important;
+	background-color:rgba(0,0,0,0) !important;
+	background-position:0 0 !important;
+	background-size:auto !important;
+	background-repeat:repeat !important;
+	padding-top:15px !important;
+	padding-bottom:70px !important;
+	padding-right:25px !important;
+	padding-left:25px !important;
+	margin:0 !important;
+	text-align:start !important;
+	color:rgb(83,83,83) !important;
+}
+*.u_1924642200
+{
+	background-image:none !important;
+	background-color:rgba(0,0,0,0) !important;
+	background-position:0 0 !important;
+	background-size:auto !important;
+	background-repeat:repeat !important;
+	padding-top:0 !important;
+	padding-bottom:0 !important;
+	padding-right:30px !important;
+	padding-left:10px !important;
+	margin:0 !important;
+	text-align:start !important;
+	color:rgb(83,83,83) !important;
+}
+*#dm *.dmBody div.u_1846394926
+{
+	line-height:150% !important;
+}
+*#dm *.dmBody div.u_1120047016
+{
+	line-height:150% !important;
+}
+*#dm *.dmBody div.u_1259492280
+{
+	background-repeat:no-repeat !important;
+	background-image:none !important;
+	background-size:cover !important;
+}
+*#dm *.dmBody div.u_1689171605:before
+{
+	opacity:0.46 !important;
+	background-color:rgba(0,0,0,1) !important;
+}
+*#dm *.dmBody div.u_1689171605.before
+{
+	opacity:0.46 !important;
+	background-color:rgba(0,0,0,1) !important;
+}
+*#dm *.dmBody div.u_1689171605>.bgExtraLayerOverlay
+{
+	background-color:rgba(0,0,0,1) !important;
+}
+*#dm *.dmBody div.u_1830621111 hr
+{
+	color:rgba(0,0,0,1) !important;
+	border-top-style:solid !important;
+	border-top-width:4px !important;
+}
+*#dm *.dmBody div.u_1766791184
+{
+	line-height:200% !important;
+}
+*#dm *.dmBody div.u_1963423934
+{
+	background-image:initial !important;
+	background-color:rgba(255,239,239,1) !important;
+}
+*#dm *.dmBody div.u_1806630090
+{
+	background-color:rgba(255,239,239,1) !important;
+}
+*#dm *.dmBody a.u_1747384665 .iconBg
+{
+	display:none !important;
+}
+*#dm *.dmBody a.u_1747384665
+{
+	background-color:rgba(31,83,250,1) !important;
+	border-radius:50px !important;
+	-moz-border-radius:50px !important;
+	-webkit-border-radius:50px !important;
+}
+*#dm *.dmBody a.u_1747384665:hover span.text
+{
+	color:rgba(52,5,5,1) !important;
+}
+*#dm *.dmBody a.u_1747384665.hover span.text
+{
+	color:rgba(52,5,5,1) !important;
+}
+*#dm *.dmBody *.u_1689171605:before
+{
+	opacity:0.5 !important;
+	background-color:rgb(0,0,0) !important;
+}
+*#dm *.dmBody *.u_1689171605.before
+{
+	opacity:0.5 !important;
+	background-color:rgb(0,0,0) !important;
+}
+*#dm *.dmBody *.u_1689171605>.bgExtraLayerOverlay
+{
+	opacity:0.5 !important;
+	background-color:rgb(0,0,0) !important;
+}
+*#dm *.dmBody div.u_1689171605
+{
+	background-repeat:no-repeat !important;
+	background-image:url(https://irp-cdn.multiscreensite.com/md/dmtmpl/dms3rep/multi/black-earphones-black-background.jpg) !important;
+	background-color:rgba(255,255,255,1) !important;
+	box-shadow:rgba(0,0,0,0.25) 0 3px 11px 0 !important;
+	-moz-box-shadow:rgba(0,0,0,0.25) 0 3px 11px 0 !important;
+	-webkit-box-shadow:rgba(0,0,0,0.25) 0 3px 11px 0 !important;
+	border-style:solid !important;
+	border-width:0 !important;
+}
+*#dm *.dmBody div.u_1634561375 .slides .slide-title
+{
+	color:rgba(255,255,255,1) !important;
+}
+*#dm *.dmBody div.u_1634561375 .slides .slide-text
+{
+	color:rgba(0,0,0,0) !important;
+}
+*#dm *.dmBody div.u_1634561375 .slides .slide-button
+{
+	background-color:rgba(0,0,0,0) !important;
+}
+*#dm *.dmBody div.u_1634561375 .color-overlay
+{
+	background-color:rgba(0,0,0,0) !important;
+}
+*#dm *.dmBody div.u_1634561375
+{
+	border-style:solid !important;
+	border-width:0 !important;
+}
+*#dm *.dmBody *.u_1634561375 .flex-direction-nav a
+{
+	width:35px !important;
+	overflow:visible !important;
+	height:35px !important;
+	color:rgba(31,151,250,1) !important;
+}
+*#dm *.dmBody *.u_1634561375 .flex-direction-nav a:before
+{
+	font-size:35px !important;
+}
+*.dmFooterContainer
+{
+	display:null !important;
+}
+
+</style>
+
+<style id="pagestyleDevice" type="text/css">
+    
+*#dm *.dmBody div.u_1689171605
+{
+	background-repeat:no-repeat !important;
+	background-image:url(https://irp-cdn.multiscreensite.com/md/dmtmpl/dms3rep/multi/black-earphones-black-background.jpg) !important;
+	background-color:rgba(255,255,255,1) !important;
+	box-shadow:rgba(0,0,0,0.25) 0 3px 11px 0 !important;
+	-moz-box-shadow:rgba(0,0,0,0.25) 0 3px 11px 0 !important;
+	-webkit-box-shadow:rgba(0,0,0,0.25) 0 3px 11px 0 !important;
+	border-style:solid !important;
+	border-width:0 !important;
+}@media all and (min-width:1920px), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+
+*#dm *.dmBody div.u_1689171605
+{
+	background-repeat:no-repeat !important;
+	background-image:url(https://irp-cdn.multiscreensite.com/md/dmtmpl/dms3rep/multi/black-earphones-black-background.jpg) !important;
+	background-color:rgba(255,255,255,1) !important;
+	box-shadow:rgba(0,0,0,0.25) 0 3px 11px 0 !important;
+	-moz-box-shadow:rgba(0,0,0,0.25) 0 3px 11px 0 !important;
+	-webkit-box-shadow:rgba(0,0,0,0.25) 0 3px 11px 0 !important;
+	border-style:solid !important;
+	border-width:0 !important;
+}
+}
+*#dm *.dmBody div.u_1046925346{
+padding-right:30px !important}
+*#dm *.dmBody div.u_1846394926{
+float:none !important;
+top:0 !important;
+left:0 !important;
+width:409px !important;
+position:relative !important;
+height:auto !important;
+padding-top:2px !important;
+padding-left:0 !important;
+padding-bottom:2px !important;
+margin-right:0 !important;
+margin-left:0 !important;
+max-width:calc(100% - 0px) !important;
+margin-top:8px !important;
+margin-bottom:8px !important;
+padding-right:0 !important;
+min-width:25px !important;
+text-align:left !important}
+*#dm *.dmBody div.u_1924642200{
+padding-left:10px !important;
+padding-right:30px !important}
+*#dm *.dmBody div.u_1120047016{
+float:none !important;
+top:0 !important;
+left:0 !important;
+width:388px !important;
+position:relative !important;
+height:auto !important;
+padding-top:2px !important;
+padding-left:0 !important;
+padding-bottom:2px !important;
+margin-right:0 !important;
+margin-left:0 !important;
+max-width:calc(100% - 0px) !important;
+margin-top:8px !important;
+margin-bottom:8px !important;
+padding-right:0 !important;
+min-width:25px !important;
+text-align:left !important}
+*#dm *.dmBody div.u_1406817268{
+padding-bottom:70px !important}
+*#dm *.dmBody *.u_1308877641 *.socialHubInnerDiv a{
+margin-right:12px !important}
+*#dm *.dmBody h1.u_1053508920{
+float:none !important;
+top:0 !important;
+left:0 !important;
+width:100% !important;
+position:relative !important;
+height:auto !important;
+padding-top:0 !important;
+padding-left:0 !important;
+padding-bottom:0 !important;
+max-width:calc(100% - 0px) !important;
+padding-right:0 !important;
+min-width:25px !important;
+text-align:left !important}
+*#dm *.dmBody div.u_1359258016{
+float:none !important;
+top:0 !important;
+left:0 !important;
+width:100% !important;
+position:relative !important;
+height:auto !important;
+padding-top:0 !important;
+padding-left:0 !important;
+padding-bottom:0 !important;
+margin-right:0 !important;
+margin-left:0 !important;
+max-width:calc(100% - 0px) !important;
+margin-top:0 !important;
+margin-bottom:0 !important;
+padding-right:0 !important;
+min-width:25px !important;
+text-align:left !important}
+*#dm *.dmBody h2.u_1053508920{
+display:block !important;
+float:none !important;
+top:0 !important;
+left:0 !important;
+width:100% !important;
+position:relative !important;
+height:auto !important;
+padding-top:0 !important;
+padding-left:0 !important;
+padding-bottom:0 !important;
+max-width:calc(100% - 0px) !important;
+padding-right:0 !important;
+min-width:25px !important;
+text-align:left !important;
+margin-bottom:0 !important;
+margin-top:0 !important}
+*#dm *.dmBody *.u_1308877641 *.socialHubIcon{
+width:32px !important;
+height:32px !important;
+font-size:21.333333333333332px !important;
+line-height:32px !important}
+*#dm *.dmBody *.u_1308877641 *.socialHubIcon:after{
+width:40px !important;
+height:32px !important}
+*#dm *.dmBody div.u_1355740980{
+padding-right:14px !important;
+margin-left:38px !important}
+*#dm *.dmBody div.u_1308877641{
+float:none !important;
+top:0 !important;
+left:0 !important;
+width:calc(100% - 0px) !important;
+position:relative !important;
+height:auto !important;
+padding-top:0 !important;
+padding-left:0 !important;
+padding-bottom:0 !important;
+max-width:359px !important;
+padding-right:0 !important;
+min-width:25px !important;
+text-align:left !important;
+margin-right:0 !important;
+margin-left:0 !important;
+margin-top:45px !important;
+margin-bottom:0 !important;
+display:block !important}
+*#dm *.dmBody div.u_1689171605{
+float:none !important;
+top:0 !important;
+left:0 !important;
+width:100% !important;
+position:relative !important;
+height:auto !important;
+padding-top:219.5px !important;
+padding-left:40px !important;
+padding-bottom:219.5px !important;
+margin-right:auto !important;
+margin-left:auto !important;
+max-width:none !important;
+margin-top:0 !important;
+margin-bottom:0 !important;
+padding-right:40px !important;
+min-width:0 !important;
+text-align:center !important;
+background-repeat:no-repeat !important;
+background-size:cover !important;
+background-attachment:fixed !important}
+*#dm *.dmBody div.u_1199057175{
+padding-top:70px !important}
+*#dm .d-page-1125715846 DIV.dmInner{
+background-color:rgba(255,255,255,1) !important}
+*#dm .d-page-1125715846 DIV#dmSlideRightNavRight{
+background-color:rgba(255,255,255,1) !important}
+*#dm *.dmBody div.u_1806630090{
+padding-top:20px !important;
+margin-left:0 !important;
+padding-left:0 !important;
+padding-bottom:0 !important;
+margin-top:24px !important;
+margin-bottom:0 !important;
+padding-right:0 !important;
+margin-right:0 !important;
+float:none !important;
+top:0 !important;
+left:0 !important;
+width:auto !important;
+position:relative !important;
+height:auto !important;
+max-width:100% !important;
+min-width:0 !important;
+text-align:center !important}
+*#dm *.dmBody div.u_1929882412{
+padding-top:0 !important;
+padding-left:0 !important}
+*#dm *.dmBody h2.u_1323730896{
+float:none !important;
+top:0 !important;
+left:0 !important;
+width:calc(100% - 0px) !important;
+position:relative !important;
+height:auto !important;
+padding-top:2px !important;
+padding-left:0 !important;
+padding-bottom:2px !important;
+max-width:534px !important;
+padding-right:0 !important;
+min-width:25px !important;
+text-align:left !important;
+margin-right:0 !important;
+margin-left:0 !important;
+margin-top:8px !important;
+margin-bottom:8px !important}
+*#dm *.dmBody h4.u_1138737437{
+float:none !important;
+top:0 !important;
+left:0 !important;
+width:576px !important;
+position:relative !important;
+height:auto !important;
+padding-top:2px !important;
+padding-left:0 !important;
+padding-bottom:2px !important;
+margin-right:auto !important;
+margin-left:0 !important;
+max-width:100% !important;
+margin-top:0 !important;
+margin-bottom:8px !important;
+padding-right:0 !important;
+min-width:0 !important;
+text-align:left !important;
+display:block !important}
+*#dm *.dmBody div.u_1830621111{
+float:none !important;
+top:0 !important;
+left:0 !important;
+width:calc(100% - 19px) !important;
+position:relative !important;
+height:auto !important;
+padding-top:0 !important;
+padding-left:0 !important;
+padding-bottom:0 !important;
+margin-right:auto !important;
+margin-left:auto !important;
+max-width:57px !important;
+margin-top:12px !important;
+margin-bottom:0 !important;
+padding-right:0 !important;
+min-width:25px !important;
+text-align:center !important;
+display:block !important}
+*#dm *.dmBody div.u_1333942783{
+height:8px !important}
+*#dm *.dmBody div.u_1963423934{
+float:none !important;
+top:0 !important;
+left:0 !important;
+width:auto !important;
+position:relative !important;
+height:auto !important;
+padding-top:41px !important;
+padding-left:40px !important;
+padding-bottom:41px !important;
+margin-right:0 !important;
+margin-left:0 !important;
+max-width:100% !important;
+margin-top:0 !important;
+margin-bottom:0 !important;
+padding-right:40px !important;
+min-width:0 !important;
+text-align:center !important}
+*#dm *.dmBody h3.u_1501897126{
+float:none !important;
+top:0 !important;
+left:0 !important;
+width:calc(100% - 0px) !important;
+position:relative !important;
+height:auto !important;
+padding-top:0 !important;
+padding-left:0 !important;
+padding-bottom:0 !important;
+margin-right:0 !important;
+margin-left:0 !important;
+max-width:337px !important;
+margin-top:24px !important;
+margin-bottom:24px !important;
+padding-right:0 !important;
+min-width:25px !important;
+text-align:start !important}
+*#dm *.dmBody a.u_1747384665 span.text{
+font-size:24px !important}
+*#dm *.dmBody div.u_1590149493{
+height:8px !important}
+*#dm *.dmBody div.u_1766791184{
+float:none !important;
+top:0 !important;
+left:0 !important;
+width:calc(100% - 8px) !important;
+position:relative !important;
+height:auto !important;
+padding-top:2px !important;
+padding-left:0 !important;
+padding-bottom:2px !important;
+margin-right:0 !important;
+margin-left:8px !important;
+max-width:482px !important;
+margin-top:0 !important;
+margin-bottom:8px !important;
+padding-right:0 !important;
+min-width:25px !important;
+text-align:left !important}
+*#dm *.dmBody div.u_1798426764{
+float:none !important;
+top:0 !important;
+left:0 !important;
+width:calc(100% - 130px) !important;
+position:relative !important;
+height:auto !important;
+padding-top:0 !important;
+padding-left:0 !important;
+padding-bottom:0 !important;
+margin-right:309px !important;
+margin-left:130px !important;
+max-width:891px !important;
+margin-top:-6px !important;
+margin-bottom:0 !important;
+padding-right:0 !important;
+min-width:25px !important;
+text-align:start !important}
+*#dm *.dmBody a.u_1747384665{
+display:block !important;
+float:none !important;
+top:0 !important;
+left:0 !important;
+width:calc(100% - 0px) !important;
+position:relative !important;
+height:69px !important;
+padding-top:0 !important;
+padding-left:0 !important;
+padding-bottom:0 !important;
+margin-right:303px !important;
+margin-left:500px !important;
+max-width:196px !important;
+margin-top:40px !important;
+margin-bottom:10px !important;
+padding-right:0 !important;
+min-width:25px !important;
+text-align:center !important}
+</style>
+
+
+
+
+<!--[if IE 7]><style>.fw-head.fw-logo img{max-width: 290px;}.dm_header .logo-div img{max-width: 290px;}</style><![endif]-->
+<!--[if IE 8]><style>.fw-head .fw-logo img{max-width: 290px;}.dm_header .logo-div img{max-width: 290px;}*#dm div.dmHeader{_height:90px;min-height:0px;}</style><![endif]-->
+
+
+
+    <style id="globalFontSizeStyle" type="text/css">
+        .font-size-22, .size-22, .size-22 > font { font-size: 22px !important; }.font-size-22, .size-22, .size-22 > font { font-size: 22px !important; }.font-size-22, .size-22, .size-22 > font { font-size: 22px !important; }.font-size-22, .size-22, .size-22 > font { font-size: 22px !important; }.font-size-22, .size-22, .size-22 > font { font-size: 22px !important; }.font-size-36, .size-36, .size-36 > font { font-size: 36px !important; }.font-size-48, .size-48, .size-48 > font { font-size: 48px !important; }.font-size-16, .size-16, .size-16 > font { font-size: 16px !important; }
+    </style>
+    <style id="pageFontSizeStyle" type="text/css">
+    </style>
+
+
+
+<!-- ========= JS Section ========= -->
+
+<!-- Modernizr -->
+<script>
+    /* THIS FILE IS AUTO-GENERATED. SEE build/build-modernizr */
+
+/*! modernizr 3.5.0 (Custom Build) | MIT *
+ * https://modernizr.com/download/?-passiveeventlisteners-supports-setclasses-cssclassprefix:dm- !*/
+!function(e,n,s){function o(e,n){return typeof e===n}function t(){var e,n,s,t,a,r,l;for(var c in i)if(i.hasOwnProperty(c)){if(e=[],n=i[c],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(s=0;s<n.options.aliases.length;s++)e.push(n.options.aliases[s].toLowerCase());for(t=o(n.fn,"function")?n.fn():n.fn,a=0;a<e.length;a++)r=e[a],l=r.split("."),1===l.length?Modernizr[l[0]]=t:(!Modernizr[l[0]]||Modernizr[l[0]]instanceof Boolean||(Modernizr[l[0]]=new Boolean(Modernizr[l[0]])),Modernizr[l[0]][l[1]]=t),f.push((t?"":"no-")+l.join("-"))}}function a(e){var n=l.className,s=Modernizr._config.classPrefix||"";if(c&&(n=n.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+s+"no-js(\\s|$)");n=n.replace(o,"$1"+s+"js$2")}Modernizr._config.enableClasses&&(n+=" "+s+e.join(" "+s),c?l.className.baseVal=n:l.className=n)}var i=[],r={_version:"3.5.0",_config:{classPrefix:"dm-",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var s=this;setTimeout(function(){n(s[e])},0)},addTest:function(e,n,s){i.push({name:e,fn:n,options:s})},addAsyncTest:function(e){i.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=r,Modernizr=new Modernizr;var f=[],l=n.documentElement,c="svg"===l.nodeName.toLowerCase(),u="CSS"in e&&"supports"in e.CSS,p="supportsCSS"in e;Modernizr.addTest("supports",u||p),Modernizr.addTest("passiveeventlisteners",function(){var n=!1;try{var s=Object.defineProperty({},"passive",{get:function(){n=!0}});e.addEventListener("test",null,s)}catch(o){}return n}),t(),a(f),delete r.addTest,delete r.addAsyncTest;for(var d=0;d<Modernizr._q.length;d++)Modernizr._q[d]();e.Modernizr=Modernizr}(window,document);
+    var isWLR = true;
+
+    window.customWidgetsFunctions = {};
+    window.customWidgetsStrings = {};
+    window.collections = {};
+</script>
+<script>
+                window.collections = JSON.parse(decodeURIComponent(escape(atob("e30="))));
+</script>
+
+
+
+<script type="text/javascript">
+
+    var version = "4.7.7";
+    var build = "2020-05-20T06_53_31";
+
+    function buildEditorParent() {
+        window.isMultiScreen = true;
+        window.editorParent = {};
+        window.previewParent = {};
+        window.assetsCacheQueryParam = "?version=2020-05-20T06_53_31";
+        try {
+            var _p = window.parent;
+            if (_p && _p.document && _p.$ && _p.$.dmfw) {
+                window.editorParent = _p;
+            }
+            else if (_p.isSitePreview) {
+                window.previewParent = _p;
+            }
+        } catch (e) {
+
+        }
+    }
+
+    buildEditorParent();
+
+
+</script>
+<!-- Load jQuery -->
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!-- End Load jQuery --><script>
+    window.cookiesNotificationMarkupPreview = 'null';
+</script>
+<script>
+    var shouldMonitorImages =  false;
+    if(shouldMonitorImages) {
+        window.addEventListener('error', function(event) {
+            if(event.target && event.target.tagName === 'IMG' && event.target.src && event.target.src.includes && event.target.src.includes('multiscreensite.com')) {
+                if (!window.fetch){
+                    return;
+                }
+                try {
+                    return fetch('/_dm/s/rt/actions/log/WARN', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ data: {
+                                type: 'image failed to load',
+                                eventType: event.type,
+                                image: event.target.src,
+                                href: window.location.href
+                            } })
+                    });
+                } catch (error) {
+                    console.log(error);
+                }
+
+            }
+        }, { capture: true });
+    }
+
+</script>
+<!-- HEAD RT JS Include -->
+<script>
+    window.INSITE = window.INSITE || {};
+    window.INSITE.device = "desktop";
+    window.rtCommonProps = {};
+    rtCommonProps["rt.ajax.ajaxScriptsFix"] =true;
+    rtCommonProps["rt.pushnotifs.sslframe.encoded"] = 'aHR0cHM6Ly97c3ViZG9tYWlufS5wdXNoLW5vdGlmcy5jb20=';
+    rtCommonProps["facebook.accessToken"] = '126515034112906|8vv7JhnEegS8qz43fIOZjxGZReA';
+    rtCommonProps["performance.tabletPreview.removeScroll"] = 'false';
+    rtCommonProps["feature.flag.contactUsNewForm"] = 'true';
+    rtCommonProps["inlineEditGrid.snap"] =true;
+    rtCommonProps["popup.insite.cookie.ttl"] = '0.5';
+    rtCommonProps["rt.pushnotifs.force.button"] =true;
+    rtCommonProps["google.places.key"] = 'AIzaSyBAwUOqPUB1CU31yDztoZYaUE7sPv4ktEI';
+    rtCommonProps["common.mapbox.token"] = 'pk.eyJ1IjoiZGFubnliMTIzIiwiYSI6ImNqMGljZ256dzAwMDAycXBkdWxwbDgzeXYifQ.Ck5P-0NKPVKAZ6SH98gxxw';
+    rtCommonProps["common.mapbox.js.override"] =false;
+    rtCommonProps["common.opencage.token"] = '319e14f32bcce967ba55cd263478796d';
+    rtCommonProps["common.here.appId"] = 'iYvDjIQ2quyEu0rg0hLo';
+    rtCommonProps["common.here.appCode"] = '1hcIxLJcbybmtBYTD9Z1UA';
+    rtCommonProps["isCoverage.test"] =false;
+    rtCommonProps["ecommerce.ecwid.script"] = 'https://app.multiscreenstore.com/script.js';
+    rtCommonProps["feature.flag.mappy.kml"] =false;
+    rtCommonProps["common.resources.dist.cdn"]=true;
+    rtCommonProps["common.build.dist.folder"]='production/1280';
+    rtCommonProps["common.resources.cdn.host"]='https://static-cdn.multiscreensite.com';
+    rtCommonProps["common.resources.folder"]='https://static-cdn.multiscreensite.com/mnlt/production/1280';
+    rtCommonProps["import.images.storage.useImageCDN"]=true;
+    
+    rtCommonProps['common.mapsProvider'] = 'mapbox';
+    rtCommonProps['common.mapsProvider.version'] = '0.52.0';
+    rtCommonProps['common.geocodeProvider'] = 'here';
+    rtCommonProps['common.map.defaults.radiusSize'] = '1500';
+    rtCommonProps['common.map.defaults.radiusBg'] = 'rgba(255, 255, 255, 0.4)';
+    rtCommonProps['common.map.defaults.strokeColor'] = 'rgba(255, 255, 255, 1)';
+    rtCommonProps['common.map.defaults.strokeSize'] = '2';
+    rtCommonProps['server.for.resources'] = '';
+    rtCommonProps['feature.flag.lazy.widgets'] = true;
+    rtCommonProps['feature.flag.no-prefixed.changes'] = false;
+    rtCommonProps['feature.flag.single.wow'] = false;
+    rtCommonProps['feature.flag.mark.anchors']= true;
+    rtCommonProps['captcha.public.key'] = '6LffcBsUAAAAAMU-MYacU-6QHY4iDtUEYv_Ppwlz';
+    rtCommonProps['captcha.invisible.public.key'] = '6LeiWB8UAAAAAHYnVJM7_-7ap6bXCUNGiv7bBPME';
+    rtCommonProps["images.sizes.small"]=160;
+    rtCommonProps["images.sizes.mobile"]=640;
+    rtCommonProps["images.sizes.tablet"]=1280;
+    rtCommonProps["images.sizes.desktop"]=1920;
+    rtCommonProps["modules.resources.cdn"]=true;
+    rtCommonProps["import.images.storage.imageCDN"]='https://lirp-cdn.multiscreensite.com/';
+    rtCommonProps["facebook.api.version"]='7.0';
+    rtCommonProps["runtime.widgets.photogallery.photoswipe.lazy"]=true;
+</script>
+<script src="https://static-cdn.multiscreensite.com/mnlt/production/1280/_dm/s/rt/dist/scripts/d-js-runtime-one-package-no-fs.min.js" ></script>
+<!-- End of HEAD RT JS Include -->
+<script src="https://static-cdn.multiscreensite.com/mnlt/production/1280/_dm/s/rt/dist/scripts/d-js-one-runtime-layouts-package.min.js" ></script>
+<script src="https://static-cdn.multiscreensite.com/mnlt/production/1280/_dm/s/rt/dist/scripts/d-js-one-runtime-layouts-desktop.min.js" ></script>
+<script>jQuery.DM.updateWidthAndHeight();
+$(window).resize(function () {
+    
+});
+$(window).bind("orientationchange", function (e) {
+    $.layoutManager.initLayout();
+    
+});
+$(document).resize(function () {
+    
+});
+</script>
+
+
+
+
+
+<!-- End render the required css and JS in the head section -->
+
+
+
+
+
+
+
+
+
+  <meta name="twitter:card" content="summary"/>
+
+
+
+
+<!-- SYS- VVNfRElSRUNUX1BST0RVQ1RJT04= -->
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body id="dmRoot"  class="supportsFontIcons supportsFontIcons dmRoot dmDesktopBody fix-mobile-scrolling dmResellerSite dmLargeBody " style="padding:0;margin:0;"
+            >
+        <div id="disabledImageZone" style="display:none;z-index:-1">
+            <style type="text/css">
+                #imageZone {
+                    position: absolute;
+                    margin: auto;
+                }
+
+                .coloumns {
+                    border-radius: 3px;
+                    background-color: rgb(249, 152, 13); /*border:1px solid #999;*/
+                    height: 18px;
+                    width: 6px;
+                    -webkit-animation-name: loader;
+                    -webkit-animation-duration: 1s;
+                    -webkit-animation-iteration-count: infinite;
+                    -webkit-animation-direction: linear;
+                    -moz-animation-name: loader;
+                    -moz-animation-duration: 1s;
+                    -moz-animation-iteration-count: infinite;
+                    -moz-animation-direction: linear;
+                    opacity: .25;
+                    -webkit-transform: scale(0.7);
+                    -webkit-transform-origin: 50% 180%;
+                    -moz-transform: scale(0.7);
+                    -moz-transform-origin: 50% 180%;
+                    position: absolute;
+                }
+
+                #coloumn1 {
+                    -webkit-transform: rotate(0deg);
+                    -webkit-animation-delay: -.914s;
+                    -moz-transform: rotate(0deg);
+                    -moz-animation-delay: -.914s;
+                }
+
+                #coloumn2 {
+                    -webkit-transform: rotate(30deg);
+                    -webkit-animation-delay: -.831s;
+                    -moz-transform: rotate(30deg);
+                    -moz-animation-delay: -.831s;
+                }
+
+                #coloumn3 {
+                    -webkit-transform: rotate(60deg);
+                    -webkit-animation-delay: -.747s;
+                    -moz-transform: rotate(60deg);
+                    -moz-animation-delay: -.747s;
+                }
+
+                #coloumn4 {
+                    -webkit-transform: rotate(90deg);
+                    -webkit-animation-delay: -.664s;
+                    -moz-transform: rotate(90deg);
+                    -moz-animation-delay: -.664s;
+                }
+
+                #coloumn5 {
+                    -webkit-transform: rotate(120deg);
+                    -webkit-animation-delay: -.581s;
+                    -moz-transform: rotate(120deg);
+                    -moz-animation-delay: -.581s;
+                }
+
+                #coloumn6 {
+                    -webkit-transform: rotate(150deg);
+                    -webkit-animation-delay: -.498s;
+                    -moz-transform: rotate(150deg);
+                    -moz-animation-delay: -.498s;
+                }
+
+                #coloumn7 {
+                    -webkit-transform: rotate(180deg);
+                    -webkit-animation-delay: -.415s;
+                    -moz-transform: rotate(180deg);
+                    -moz-animation-delay: -.415s;
+                }
+
+                #coloumn8 {
+                    -webkit-transform: rotate(210deg);
+                    -webkit-animation-delay: -.332s;
+                    -moz-transform: rotate(210deg);
+                    -moz-animation-delay: -.332s;
+                }
+
+                #coloumn9 {
+                    -webkit-transform: rotate(240deg);
+                    -webkit-animation-delay: -.249s;
+                    -moz-transform: rotate(240deg);
+                    -moz-animation-delay: -.249s;
+                }
+
+                #coloumn10 {
+                    -webkit-transform: rotate(270deg);
+                    -webkit-animation-delay: -.166s;
+                    -moz-transform: rotate(270deg);
+                    -moz-animation-delay: -.166s;
+                }
+
+                #coloumn11 {
+                    -webkit-transform: rotate(300deg);
+                    -webkit-animation-delay: -.083s;
+                    -moz-transform: rotate(300deg);
+                    -moz-animation-delay: -.083s;
+                }
+
+                #coloumn12 {
+                    -webkit-transform: rotate(330deg);
+                    -moz-transform: rotate(330deg);
+                }
+
+                @-webkit-keyframes loader {
+                    0% {
+                        opacity: 1;
+                    }
+                    100% {
+                        opacity: .25;
+                    }
+                }
+
+                @-moz-keyframes loader {
+                    0% {
+                        opacity: 1;
+                    }
+                    100% {
+                        opacity: .25;
+                    }
+                }
+            </style>
+            <div id='imageZone'>
+                <div id='coloumn1' class='coloumns'></div>
+                <div id='coloumn2' class='coloumns'></div>
+                <div id='coloumn3' class='coloumns'></div>
+                <div id='coloumn4' class='coloumns'></div>
+                <div id='coloumn5' class='coloumns'></div>
+                <div id='coloumn6' class='coloumns'></div>
+                <div id='coloumn7' class='coloumns'></div>
+                <div id='coloumn8' class='coloumns'></div>
+                <div id='coloumn9' class='coloumns'></div>
+                <div id='coloumn10' class='coloumns'></div>
+                <div id='coloumn11' class='coloumns'></div>
+                <div id='coloumn12' class='coloumns'></div>
+            </div>
+        </div>
+
+        <!-- ========= Site Content ========= -->
+        <div id="dm" class='dmwr'>
+            
+            <div class="dm_wrapper hamburgerLayout-var5 null hamburgerLayout">
+                 <div dmwrapped="true" id="1785920551"> <div dmtemplateid="Hamburger" class="runtime-module-container dm-bfs dm-layout-sec hasAnimations hasStickyHeader inMiniHeaderMode rows-1200 dmPageBody d-page-1125715846 dmFreeHeader" id="dm-outer-wrapper" data-page-class="1125715846" data-buttonstyle="ROUND_SIDES" data-soch="true" data-background-size="cover" data-background-attachment="fixed" data-background-repeat="no-repeat" data-background-position="50% 0%" data-background-hide-inner="true" data-background-fullbleed="false" data-background-parallax-selector=".dmSectionParallex" data-background-parallax-speed="0.2"> <div id="dmStyle_outerContainer" class="dmOuter"> <div id="dmStyle_innerContainer" class="dmInner"> <div class="dmLayoutWrapper standard-var"> <div id="site_content"> <div class="p_hfcontainer"> <div id="hamburger-drawer" class="hamburger-drawer layout-drawer" layout="4821f93654f44cd4b3564a9fb45461dd===header" data-origin="top" data-auto-height="true"> <div class="u_1293894883 dmRespRow" style="text-align: center;" id="1293894883"> <div class="dmRespColsWrapper" id="1513993635"> <div class="u_1762685875 dmRespCol small-12 medium-12 large-12 empty-column" id="1762685875"></div> 
+</div> 
+</div> 
+ <div class="u_1256203609 dmRespRow middleDrawerRow" style="text-align: center;" id="1256203609"> <div class="dmRespColsWrapper" id="1617945840"> <div class="dmRespCol small-12 u_1869257856 medium-6 large-6" id="1869257856"> <nav class="u_1514524933 effect-forward main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="vertical_nav_layout_1" layout-sub="" data-show-vertical-sub-items="HIDE" id="1514524933" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" data-logo-src="" alt="" data-nav-structure="VERTICAL" wr="true" icon="true" surround="true" adwords="" data-from-nav="true" data-sub-nav="true" data-items="-1" custom-li-class="" custom-ul-class="" custom-a-class="" custom-inner-ul-class="" custom-nested-inner-ul-class="" custom-span-class="" navigation-id="unifiedNav" data-links-level="0" is-build-your-own="false"> <ul class="unifiednav__container  " data-auto&#x3d;navigation-pages=""> <li class=" unifiednav__item-wrap " data-auto&#x3d;more-pages=""> <a href="index.html" class="unifiednav__item  dmNavItemSelected  dmUDNavigationItem_00  " target="" data-target-page-alias="" data-auto&#x3d;selected-page=""> <span class="nav-item-text " data-link-text="
+                  
+    Página Inicial
+   
+           " data-auto&#x3d;page-text-style="">P&aacute;gina Inicial<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+<li class=" unifiednav__item-wrap " data-auto&#x3d;more-pages=""> <a href="sobre.html" class="unifiednav__item  dmUDNavigationItem_010101436714  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+             
+    Sobre
+   
+           " data-auto&#x3d;page-text-style="">Sobre<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+<li class=" unifiednav__item-wrap " data-auto&#x3d;more-pages=""> <a href="galeria.html" class="unifiednav__item  dmUDNavigationItem_010101200826  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+             
+    Galeria
+   
+           " data-auto&#x3d;page-text-style="">Galeria<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+<li class=" unifiednav__item-wrap " data-auto&#x3d;more-pages=""> <a href="contato.html" class="unifiednav__item  dmUDNavigationItem_010101943230  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+             
+    Contato
+   
+           " data-auto&#x3d;page-text-style="">Contato<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+<li class=" unifiednav__item-wrap " data-auto&#x3d;more-pages=""> <a href="login.html" class="unifiednav__item  dmUDNavigationItem_010101502686  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+             
+    Login
+   
+           " data-auto&#x3d;page-text-style="">Login<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+ <a data-display-type="block" class="align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient u_1861255860" file="false" href="https://www.profissionaisti.com.br/" data-element-type="dButtonLinkId" id="1861255860" dm_dont_rewrite_url="false"> <span class="iconBg" id="1113990919"> <span class="icon hasFontIcon icon-star" id="1138004722"></span> 
+</span> 
+ <span class="text" id="1182533077">Pesquisar</span> 
+</a> 
+ <div class="graphicWidget u_1086342682" editablewidget="true" data-element-type="graphic" data-widget-type="graphic" id="1086342682"> <a href="http://www.google.com" id="1299945683" class="" dm_dont_rewrite_url="false" file="false"> <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1152 1792" id="1025172567" class="svg u_1025172567" data-icon-name="fa-microphone" data-hover-effect="zoomout"> <path fill="inherit" d="M1152 704v128q0 221-147.5 384.5t-364.5 187.5v132h256q26 0 45 19t19 45-19 45-45 19h-640q-26 0-45-19t-19-45 19-45 45-19h256v-132q-217-24-364.5-187.5t-147.5-384.5v-128q0-26 19-45t45-19 45 19 19 45v128q0 185 131.5 316.5t316.5 131.5 316.5-131.5 131.5-316.5v-128q0-26 19-45t45-19 45 19 19 45zM896 320v512q0 132-94 226t-226 94-226-94-94-226v-512q0-132 94-226t226-94 226 94 94 226z"></path> 
+</svg> 
+</a> 
+</div> 
+</div> 
+ <div class="dmRespCol small-12 u_1779898860 medium-6 large-6" id="1779898860"> <h3 class="dmNewParagraph" data-element-type="paragraph" id="1262564720" data-uialign="right" style="transition: opacity 1s ease-in-out;"><b><span style="font-weight: 700;" class="lh-1 font-size-22"><font style="color: rgb(255, 255, 255);">Siga-me</font></span></b></h3> <div class="u_1333113754 align-center text-align-center dmSocialHub" id="1333113754" dmle_extension="social_hub" data-element-type="social_hub" wr="true" networks="" icon="true" surround="true" adwords=""> <div class="socialHubWrapper"> <div class="socialHubInnerDiv "> <a href="https://www.facebook.com/people/Wesley-Desenvolvedor-Web/100036754243412" target="_blank" dmle_dont_remove="target" dm_dont_rewrite_url="true"> <span class="dmSocialFacebook dm-social-icons-facebook oneIcon socialHubIcon style2" data-hover-effect=""></span> 
+</a> 
+ <a href="https://www.instagram.com/wsdesenvolvedorweb/" target="_blank" dmle_dont_remove="target" dm_dont_rewrite_url="true"> <span class="dmSocialInstagram dm-social-icons-instagram oneIcon socialHubIcon style2" data-hover-effect=""></span> 
+</a> 
+ <a href="https://www.youtube.com/channel/UCwtjI6Dgbn33--OlZakGoUg/" target="_blank" dmle_dont_remove="target" dm_dont_rewrite_url="true"> <span class="dmSocialYoutube dm-social-icons-youtube oneIcon socialHubIcon style2" data-hover-effect=""></span> 
+</a> 
+ <a href="https://linkedin.com/in/wesley-bento-dos-santos-9b66a3128" target="_blank" dmle_dont_remove="target" dm_dont_rewrite_url="true"> <span class="dmSocialLinkedin icon-linkedin oneIcon socialHubIcon style2" data-hover-effect=""></span> 
+</a> 
+ <a href="https://web.whatsapp.com/send?phone=5511988574097" target="_blank" dmle_dont_remove="target" dm_dont_rewrite_url="true"> <span class="dmSocialWhatsapp dm-social-icons-whatsapp oneIcon socialHubIcon style2" data-hover-effect=""></span> 
+</a> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1427354932 dmDividerWrapper clearfix" data-element-type="dDividerId" data-layout="divider-style-1" data-widget-version="2" id="1427354932"><hr class="dmDivider" style="border-width:2px; border-top-style:solid; color:grey;" id="1810596248"/></div> 
+ <h3 class="dmNewParagraph" data-element-type="paragraph" id="1943883000" data-uialign="right" style="transition: opacity 1s ease-in-out;"><b><span style="font-weight: 700;" class="font-size-22 lh-1"><font style="color: rgb(255, 255, 255);"></font></span></b><span style="font-weight: 400; font-family: Molengo;"><b style=""><span style="font-weight: inherit;" class="font-size-22 lh-1"><font style="color: rgb(255, 255, 255);">ASSINE E RECEBA&nbsp;&nbsp;</font></span></b><b style=""><span class="font-size-22 lh-1" style="font-weight: inherit;"><font style="color: rgb(255, 255, 255);">BOLETIM DE NOT&Iacute;CIAS.</font></span></b></span><b><span class="font-size-22 lh-1"><font style="color: rgb(255, 255, 255);"></font></span></b></h3> <div class="dmNewParagraph" data-dmtmpl="true" id="1657712458" data-uialign="right" style="transition: opacity 1s ease-in-out;"><span style="font-weight: 400;"><span><font style="color: rgb(182, 182, 182);">Receba as &uacute;ltimas not&iacute;cias diretamente em sua caixa de entrada.</font></span></span></div> <div class="dmform default u_1275113608" preserve_css="true" data-element-type="dContactUsRespId" id="1275113608" data-layout="layout-4" captcha="true" data-captcha-position="bottomright" data-captcha-message="RXN0ZSBzaXRlIMOpIHByb3RlZ2lkbyBwb3IgcmVDQVBUQ0hBLiBBcGxpY2FtLXNlIGEgPGEgdHlwZT0idXJsIiBkYXRhLXJ1bnRpbWUtdXJsPSJodHRwczovL3BvbGljaWVzLmdvb2dsZS5jb20vcHJpdmFjeSIgaHJlZj0iaHR0cHM6Ly9wb2xpY2llcy5nb29nbGUuY29tL3ByaXZhY3kiIHRhcmdldD0iX2JsYW5rIj5Qb2zDrXRpY2EgZGUgcHJpdmFjaWRhZGU8L2E+IGUgb3MgPGEgdHlwZT0idXJsIiBkYXRhLXJ1bnRpbWUtdXJsPSJodHRwczovL3BvbGljaWVzLmdvb2dsZS5jb20vdGVybXMiIGhyZWY9Imh0dHBzOi8vcG9saWNpZXMuZ29vZ2xlLmNvbS90ZXJtcyIgdGFyZ2V0PSJfYmxhbmsiPlRlcm1vcyBkZSBzZXJ2acOnbzwvYT4gZG8gR29vZ2xlLg=="> <h3 class="dmform-title dmwidget-title" id="1764544046" hide="true"></h3> 
+ <div class="dmform-wrapper" preserve_css="true" id="1138273787" captcha-lang="pt"> <form method="post" class="dmRespDesignRow" locale="ENGLISH" id="1011030522"> <div class="dmforminput required  small-12 dmRespDesignCol medium-12 large-12" id="1991891854"> <label for="dmform-1" id="1928591821"></label> 
+<input type="email" class="" name="dmform-1" id="1199467048" placeholder="Seu e-mail"/><input type="hidden" name="label-dmform-1" id="1831643275" class=""/></div> 
+ <span id="1531703378" class="dmWidgetClear"></span> 
+ <div class="dmformsubmit dmWidget R" preserve_css="true" id="1138892140"><input class="" name="submit" type="submit" value="ASSINAR" id="1316625679"/></div> 
+<input name="dmformsendto" type="hidden" value="O0wrseIfFLtUUEwwouAaczSMgi+KNE4gofcCpN0tUEGiSkqxhWjYEaT748YutXo+7hjNcD+REFb9qzMEcmcbJBSD+CCuxNJslYLMj4nHEnk=" preserve_css="true" id="1679531443" class="" data-dec="true"/><input class="dmActionInput" type="hidden" name="action" value="/_dm/s/rt/widgets/dmform.submit.jsp" id="1326764660"/><input name="dmformsubject" type="hidden" value="Mensagem do Formulário" preserve_css="true" id="1358148607"/></form> 
+</div> 
+ <div class="dmform-success" style="display:none" preserve_css="true" id="1530376750">Obrigado por entrar em contato. Retornaremos assim que poss&iacute;vel</div> 
+ <div class="dmform-error" style="display:none" preserve_css="true" id="1811629854">Desculpe, houve um erro ao enviar a mensagem. Por favor, tente novamente mais tarde</div> 
+</div> 
+ <a data-display-type="block" class="u_1260390048 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/" data-element-type="dButtonLinkId" id="1260390048" data-buttonstyle="FLAT_ROUND_ICON" icon-name="icon-long-arrow-right"> <span class="iconBg" id="1220567146"> <span class="icon hasFontIconstar hasFontIcon icon-long-arrow-right" id="1713958465"></span> 
+</span> 
+ <span class="text" id="1448702322">Confira os meus boletins  de not&iacute;cias mais recentes</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1226060849 dmRespRow" style="text-align: center;" id="1226060849"> <div class="dmRespColsWrapper" id="1700508956"> <div class="u_1412277878 dmRespCol small-12 medium-12 large-12 empty-column" id="1412277878"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="layout-drawer-overlay" id="layout-drawer-overlay"></div> 
+</div> 
+ <div class="site_content"> <div id="hamburger-header-container" class="hamburger-header-container p_hfcontainer"> <div id="hamburger-header" class="u_hamburger-header hamburger-header p_hfcontainer" layout="44dc38f951e9489490b055748e10ba9f===header" has-shadow="true"> <div class="u_1674862773 dmRespRow dmSectionNoParallax fullBleedChanged fullBleedMode" style="text-align: center;" id="1674862773"> <div class="dmRespColsWrapper" id="1257734997"></div> 
+</div> 
+</div> 
+</div> 
+ <div dmwrapped="true" id="1785920551" class="dmBody u_dmStyle_template_about"> <div id="allWrapper" class="allWrapper"> <div id="dm_content" class="dmContent"> <div dm:templateorder="1" class="dmDefaultRespTmpl" id="1125715846"> <div class="innerPageTmplBox dmDefaultPage  dmRespRowsWrapper" id="1841797601"> <div class="u_1497665282 dmRespRow" id="1497665282"> <div class="dmRespColsWrapper" id="1233888309"> <div class="dmRespCol large-12 medium-12 small-12" id="1353652014"> <div class="flex-container dmImageSlider dmNoMargin dmNoMark u_1634561375 hasFullWidthMobile" editablewidget="true" data-widget-type="imageSlider" data-element-type="dSliderId" id="1634561375"> <div class="flexslider ed-version nav-layout-3" sliderscriptparams="{'stretch':false,'animation':true,'randomize':false,'directionNav':true,'isAutoPlay':true,'isFade':true,'controlNav':false,'slideshowSpeed':7000,'animationDuration':600,'pausePlay':true,'prevText':'','nextText':''}" id="1916569965" layout="empty"> <ul class="slides" id="1996696786"> <li layout="center" position="center" animation="fadeInUp" show-content="true" color-overlay="true" text-background="true" id="1502830106"><img dm="true" src="https://lirp-cdn.multiscreensite.com/da8a4922/dms3rep/multi/opt/download2-1920w.png" id="1845174987" onerror="handleImageLoadError(this)"/> <div class="color-overlay" id="1397867240"></div> 
+ <div class="slide-inner" id="1491312741"> <div class="text-wrapper" id="1913084383"> <h3 class="slide-title" id="1829630970">T&iacute;tulo do Slide</h3> 
+ <div class="slide-text richText" id="1740362494">Escreva sua legenda aqui</div> 
+</div> 
+ <div class="slide-button dmWidget clearfix" id="1543522779"> <span class="iconBg" id="1742510785"> <span class="icon hasFontIcon icon-star" id="1806025268"></span> 
+</span> 
+ <span class="text" id="1403358797">Bot&atilde;o</span> 
+</div> 
+</div> 
+</li> 
+ <li layout="center" position="center" animation="fadeInUp" show-content="true" color-overlay="true" text-background="true" id="1274564323"><img dm="true" src="https://lirp-cdn.multiscreensite.com/da8a4922/dms3rep/multi/opt/download+%281%29-1920w.png" id="1818073202" onerror="handleImageLoadError(this)"/> <div class="color-overlay" id="1655290360"></div> 
+ <div class="slide-inner" id="1108819431"> <div class="text-wrapper" id="1559507133"> <h3 class="slide-title" id="1038531317">T&iacute;tulo do Slide</h3> 
+ <div class="slide-text richText" id="1287280181">Escreva sua legenda aqui</div> 
+</div> 
+ <div class="slide-button dmWidget clearfix" id="1326228133"> <span class="iconBg" id="1649211187"> <span class="icon hasFontIcon icon-star" id="1127990976"></span> 
+</span> 
+ <span class="text" id="1848213541">Bot&atilde;o</span> 
+</div> 
+</div> 
+</li> 
+ <li layout="center" position="center" animation="fadeInUp" show-content="true" color-overlay="true" text-background="true" id="1704042402"><img dm="true" src="https://lirp-cdn.multiscreensite.com/da8a4922/dms3rep/multi/opt/download-1920w.png" id="1078257356" onerror="handleImageLoadError(this)"/> <div class="color-overlay" id="1859395704"></div> 
+ <div class="slide-inner" id="1226127784"> <div class="text-wrapper" id="1236386282"> <h3 class="slide-title" id="1971180761">T&iacute;tulo do Slide</h3> 
+ <div class="slide-text richText" id="1510411866">Escreva sua legenda aqui</div> 
+</div> 
+ <div class="slide-button dmWidget clearfix" id="1886430221"> <span class="iconBg" id="1157799372"> <span class="icon hasFontIcon icon-star" id="1884833462"></span> 
+</span> 
+ <span class="text" id="1049259175">Bot&atilde;o</span> 
+</div> 
+</div> 
+</li> 
+ <li layout="center" position="center" animation="fadeInUp" show-content="true" color-overlay="true" text-background="true" id="1978357873"><img dm="true" src="https://lirp-cdn.multiscreensite.com/da8a4922/dms3rep/multi/opt/download3-1920w.png" id="1978103040" onerror="handleImageLoadError(this)"/> <div class="color-overlay" id="1032491627"></div> 
+ <div class="slide-inner" id="1871032477"> <div class="text-wrapper" id="1463252811"> <h3 class="slide-title" id="1897783809">T&iacute;tulo do Slide</h3> 
+ <div class="slide-text richText" id="1580535596">Escreva sua legenda aqui</div> 
+</div> 
+ <div class="slide-button dmWidget clearfix" id="1753673914"> <span class="iconBg" id="1513269284"> <span class="icon hasFontIcon icon-star" id="1773311093"></span> 
+</span> 
+ <span class="text" id="1263582025">Bot&atilde;o</span> 
+</div> 
+</div> 
+</li> 
+</ul> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow dmTopContentRow u_1199057175" id="1199057175"> <div class="dmRespColsWrapper" id="1936522394"> <div class="small-12 dmRespCol dmAboutTopSecondSection u_1924642200 medium-12 large-12" id="1924642200"><!-- <dm:List dm:model="list" dm:layout="layoutD" class="roomsList"/> --> <h3 class="dmDefaultH3" id="1854170747" data-uialign="left"><font style="color: rgb(179, 15, 15);" class="lh-1 m-font-size-36 font-size-48"><span style="font-weight: 400; font-family: Playball;">Sobre Mim</span></font></h3> <div class="u_1120047016 dmNewParagraph" id="1120047016" data-uialign="left">Meu nome &eacute; Wesley Bento dos Santos, natural de Est&acirc;ncia Sergipe/SE morando atualmente em S&atilde;o Paulo sou Desenvolvedor Web. <div><br/></div> 
+ <div style="text-align: justify;">J&aacute; passei por empresas como Atento Brasil, Emtu, e outras mais. Sou Graduado em An&aacute;lise e Desenvolvimento de Sistemas pelo Centro Educacional Internacional UNINTER no ano de 2019, mas curiosamente, essa n&atilde;o foi minha primeira faculdade, que eu ingressei Cursei at&eacute; o 4 per&iacute;odo de F&iacute;sica M&eacute;dica na UFS. Sim, voc&ecirc; leu certo, eu realmente comecei m&aacute;s desistir do curso visto que, era a area de tecnologia que me fascinava e agora trabalho com web e amo o que fa&ccedil;o</div> 
+ <div style="text-align: justify;"><br/></div> 
+ <div>Gosto de trabalhar em equipe . No meu tempo livre, gosto de estudar, passear , fazer atividades f&iacute;sicas .</div> 
+</div> <div data-element-type="dYouTubeId" class="youtubeExt dmNoMark youtube-padding-fix" id="1886090864"> <div class="innerYoutubeExt" id="1989316008"> <iframe src="https://www.youtube.com/embed/im4x2L3F6KA" frameborder="0" allowfullscreen="" id="1160020961" class=""></iframe> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow dmMiddleContentRow u_1406817268 mobile-columns-reversed" id="1406817268"> <div class="dmRespColsWrapper" id="1556630630"> <div class="small-12 dmRespCol dmAboutBottomFirstSection u_1046925346 medium-12 large-12" id="1046925346"> <h3 class="u_1501897126 dmDefaultH3" id="1501897126" data-uialign="left" style="transition: none 0s ease 0s; display: block;" data-editor-state="closed"><span style="color: rgb(24, 104, 172);">Habilidades&nbsp;</span></h3> 
+ <div class="u_1846394926 dmNewParagraph" id="1846394926" data-uialign="left"><font style="color: rgb(107, 4, 4);">HTML e Template Languages</font> 
+ <div><font style="color: rgb(107, 4, 4);">Design Responsivo (Mobile First)</font></div> 
+ <div><font style="color: rgb(107, 4, 4);">CSS (Stylus, Sass, Less, PostCSS)</font></div> 
+ <div><font style="color: rgb(107, 4, 4);">Css Frameworks (Bootstrap 4.0)</font></div> 
+ <div><font style="color: rgb(107, 4, 4);">Javascript</font></div> 
+ <div><font style="color: rgb(107, 4, 4);">Sql Sever</font></div> 
+ <div><font style="color: rgb(107, 4, 4);">MySQL</font></div> 
+ <div><font style="color: rgb(107, 4, 4);">Asp Cl&aacute;ssico</font></div> 
+ <div><span style="color: rgb(107, 4, 4);">Git /GitHib</span></div> 
+ <div><span style="color: rgb(107, 4, 4);">Visual Studio Code</span></div> 
+ <div><span style="color: rgb(107, 4, 4); background-color: rgba(0, 0, 0, 0);">O que eu n&atilde;o sei, procuro aprender.</span></div> 
+</div></div> 
+</div> 
+</div> 
+ <div class="dmRespRow" id="1684795347"> <div class="dmRespColsWrapper" id="1215156766"> <div class="dmRespCol large-12 medium-12 small-12" id="1527955308"> <div data-element-type="spacer" class="dmSpacer u_1590149493" id="1590149493"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1963423934 dmRespRow fullBleedChanged fullBleedMode" style="text-align: center;" id="1963423934"> <div class="dmRespColsWrapper" id="1796632316"> <div class="u_1794371167 dmRespCol small-12 medium-12 large-12" id="1794371167"> <div class="u_1806630090 dmRespRow" id="1806630090" mode="1"> <div class="dmRespColsWrapper" id="1502309004"> <div class="u_1540822685 dmRespCol large-2 medium-2 small-12" id="1540822685"> <div class="u_1830621111 dmDividerWrapper clearfix" data-element-type="dDividerId" data-layout="divider-style-1" data-widget-version="2" id="1830621111"><hr class="dmDivider" style="border-width:2px; border-top-style:solid; color:grey;" id="1518485412"/></div> 
+</div> 
+ <div class="u_1929882412 dmRespCol large-10 medium-10 small-12" id="1929882412"> <h4 class="u_1138737437 dmNewParagraph" data-element-type="paragraph" id="1138737437" style="transition: opacity 1s ease-in-out 0s;" data-uialign="left"> <font style="color:rgb(0, 0, 0);"> <span class="lh-1 font-size-16" style="font-weight:800;">SOBRE MINHA PROFISS&Atilde;O</span></font></h4></div> 
+</div> 
+</div> 
+ <h2 class="u_1323730896 dmNewParagraph" data-element-type="paragraph" id="1323730896" style="transition: none 0s ease 0s; display: block;" data-uialign="left"><font style="color: rgb(220, 22, 22);"><span style="font-family: 'Great Vibes'; font-size: 42px; font-weight: 400;">Desenvolvedor Web Full Stack</span></font></h2> <div class="u_1766791184 dmNewParagraph" data-dmtmpl="true" data-element-type="paragraph" id="1766791184" style="transition: none 0s ease 0s; display: block;" data-uialign="center"> <div style="text-align: justify;"><font style="color: rgb(31, 151, 250);">&nbsp; &nbsp; &nbsp; O pr&oacute;prio nome j&aacute; d&aacute; uma ideia do que este desenvolvedor faz, pois a palavra full significa completo e stack pilha. Ou seja, trata-se de um profissional capaz de trabalhar com toda a stack de desenvolvimento de uma aplica&ccedil;&atilde;o. ... Em muitos casos este conhecimento &eacute; essencial para o desenvolvedor.</font></div> 
+ <div style="text-align: justify;"><font style="color: rgb(31, 151, 250);">&nbsp; &nbsp; &nbsp; &nbsp;Atualmente a demanda por profissionais multidisciplinares &eacute; evidente em todas as &aacute;reas de Comunica&ccedil;&atilde;o e TI. Em desenvolvimento, especificamente, o Desenvolvedor Full Stack tem se destacado&rdquo;. Ele atua tanto em Front-end quanto em Back-end. &Eacute; o profissional que consegue receber, entender e entregar um projeto completo.</font></div> 
+ <div style="text-align: justify;"><font style="color: rgb(31, 151, 250);">&nbsp;</font> 
+<font style="color: rgb(0, 0, 0);">Saiba mais a respeito ouvindo o&nbsp; &aacute;udio&nbsp; abaixo.</font></div> 
+ <div style="text-align: left;"><br/></div> 
+</div> <div class="u_1798426764 widget-7263ee dmCustomWidget" id="1798426764" dmle_extension="custom_extension" data-element-type="custom_extension" icon="false" surround="false" data-widget-id="7263ee57034d4b0a890f48d2b554393f" data-widget-version="13" data-widget-config="eyJtaXhjbG91ZExheW91dCI6Im1lZGl1bSIsInNob3dJbWFnZSI6dHJ1ZSwiZGFyayI6ZmFsc2UsInNvdW5kY2xvdWRMYXlvdXQiOiJtZWRpdW0iLCJjb2xvciI6IiNmZjU1MDAiLCJ1cmwiOiJodHRwczovL3NvdW5kY2xvdWQuY29tL21hdHRldXMtYmFyYm9zYS00MjA5MzE1MTkvZGVzZW52b2x2ZWRvci13ZWItMSJ9"> <iframe class="audioIframe medium-layout-soundcloud" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/matteus-barbosa-420931519/desenvolvedor-web-1&color=%23ff5500&auto_play=&visual=false"></iframe> 
+</div> 
+ <a data-display-type="block" class="u_1747384665 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="http://tutano.trampos.co/7318-guia-de-profissoes-desenvolvedor-full-stack/" data-element-type="dButtonLinkId" id="1747384665" dm_dont_rewrite_url="false" data-buttonstyle="ROUND_SIDES"> <span class="iconBg" id="1014567515"> <span class="icon hasFontIcon icon-star" id="1088637952"></span> 
+</span> 
+ <span class="text" id="1628269711">Leia Mais</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow" id="1997184273"> <div class="dmRespColsWrapper" id="1100853590"> <div class="dmRespCol large-12 medium-12 small-12" id="1060000766"> <div data-element-type="spacer" class="dmSpacer u_1333942783" id="1333942783"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1689171605 dmRespRow dmSectionParallaxNew fullBleedChanged fullBleedMode hasBackgroundOverlay" style="text-align: center;" id="1689171605" mode="1"> <div class="dmRespColsWrapper" id="1391544112"> <div class="u_1355740980 dmRespCol large-6 medium-6 small-12" id="1355740980"> <h2 class="u_1053508920 dmNewParagraph" id="1053508920" style="transition-duration: 1s; transition-timing-function: ease-in-out; transition-delay: initial; transition-property: opacity; display: block;" data-uialign="left" data-editor-state="closed" data-element-type="paragraph"><div style="text-align: left;"><font color="#12d8d9">Siga-me</font></div></h2> <div class="u_1359258016 dmNewParagraph" data-dmtmpl="true" id="1359258016" data-uialign="left" style="transition-duration: 1s; transition-timing-function: ease-in-out; transition-delay: initial; transition-property: opacity; display: block;" data-editor-state="closed"><font color="#12d8d9">Seja o primeiro a saber</font></div> <div class="u_1308877641 align-center text-align-center dmSocialHub" id="1308877641" dmle_extension="social_hub" data-element-type="social_hub" wr="true" networks="" icon="true" surround="true" adwords=""> <div class="socialHubWrapper"> <div class="socialHubInnerDiv "> <a href="https://www.facebook.com/people/Wesley-Desenvolvedor-Web/100036754243412" target="_blank" dmle_dont_remove="target" dm_dont_rewrite_url="true"> <span class="dmSocialFacebook dm-social-icons-facebook oneIcon socialHubIcon style6" data-hover-effect="zoomout"></span> 
+</a> 
+ <a href="https://www.instagram.com/wsdesenvolvedorweb/" target="_blank" dmle_dont_remove="target" dm_dont_rewrite_url="true"> <span class="dmSocialInstagram dm-social-icons-instagram oneIcon socialHubIcon style6" data-hover-effect="zoomout"></span> 
+</a> 
+ <a href="https://www.youtube.com/channel/UCwtjI6Dgbn33--OlZakGoUg/" target="_blank" dmle_dont_remove="target" dm_dont_rewrite_url="true"> <span class="dmSocialYoutube dm-social-icons-youtube oneIcon socialHubIcon style6" data-hover-effect="zoomout"></span> 
+</a> 
+ <a href="https://web.whatsapp.com/send?phone=5511988574097" target="_blank" dmle_dont_remove="target" dm_dont_rewrite_url="true"> <span class="dmSocialWhatsapp dm-social-icons-whatsapp oneIcon socialHubIcon style6" data-hover-effect="zoomout"></span> 
+</a> 
+</div> 
+</div> 
+</div> 
+ <span id="1248212910"></span> 
+</div> 
+ <div class="u_1259492280 dmRespCol large-6 medium-6 small-12" id="1259492280"> <span id="1284570987"></span> 
+ <div class="u_1738581776 dmSpacer" id="1738581776" data-element-type="spacer"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1782720207 dmRespRow" id="1782720207"> <div class="dmRespColsWrapper" id="1860719857"> <div class="dmRespCol large-12 medium-12 small-12" id="1132657076"> <div data-element-type="spacer" class="dmSpacer u_1808514140" id="1808514140"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="sticky-widgets-container-global" id="1607283936"></div> 
+ <div class="dmFooterContainer"> <div id="fcontainer" class="u_fcontainer f_hcontainer dmFooter p_hfcontainer"> <div dm:templateorder="250" class="dmFooterResp generalFooter" id="1943048428"></div> 
+ <div id="1236746004" dmle_extension="powered_by" data-element-type="powered_by" icon="true" surround="false" data-dmtmpl="true"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="layout-drawer-hamburger hamburger-on-header" id="layout-drawer-hamburger" role="button" aria-label="menu opener" tabindex="0"> <span class="hamburger__slice"></span> 
+ <span class="hamburger__slice"></span> 
+ <span class="hamburger__slice"></span> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+
+            </div>
+        </div>
+<!--  Add full CSS and Javascript before the close tag of the body if needed -->
+<script type="text/javascript" id="d_track_campaign">
+(function() {
+ 	var campaign = (/utm_campaign=([^&]*)/).exec(window.location.search);
+
+ 	if (campaign && campaign != null && campaign.length > 1) {
+ 		campaign = campaign[1];
+ 		document.cookie = "_dm_rt_campaign=" + campaign + ";expires=" + new Date().getTime() + 24*60*60*1000 + ";domain=" + window.location.hostname + ";path=/";
+ 	}
+}());
+</script>
+<script type="text/javascript" >
+  var _dm_gaq = {};
+  var _gaq = _gaq || [];
+  var _dm_insite = [];
+</script>
+
+  <script type="text/javascript" id="d_track_ga">
+
+  _dm_gaq.siteAlias = 'da8a4922';
+  _dm_gaq.systemAggregatedGaqID = 'UA-7265702-9';
+  _dm_gaq.externalGaqID = '';
+  
+  _gaq.push(['_gat._forceSSL']);
+  
+  _gaq.push (['_gat._anonymizeIp']);
+  
+
+  if(_dm_gaq.systemAggregatedGaqID && (_dm_gaq.systemAggregatedGaqID != _dm_gaq.systemGaqID)){
+     // track aggregated account
+    _gaq.push(['b._setAccount', _dm_gaq.systemAggregatedGaqID]);
+    _gaq.push(['b._setAllowLinker', true]);
+    _gaq.push(['b._setVar', _dm_gaq.siteAlias]);
+    _gaq.push(['b._setCustomVar', 1, 'product', 'DM_DIRECT',  2 ]);
+    _gaq.push(['b._setCustomVar', 2, 'plan', 'BUSINESS_PLUS',  2 ]);
+    _gaq.push(['b._setCustomVar', 3, 'dfooter', 'false',  2 ]);
+    _gaq.push(['b._setCustomVar', 4, 'sitetype', '1',  2 ]);
+    _gaq.push(['b._setCustomVar', 5, 'pwaEnabled', 'true',  2 ]);
+
+      _gaq.push(['b._trackPageview' ]);
+    pushInsiteImpressions('b._trackEvent');
+   }
+
+   if(_dm_gaq.externalGaqID && _dm_gaq.externalGaqID!= '') {
+     _gaq.push(['c._setAccount', _dm_gaq.externalGaqID]);
+     _gaq.push(['c._setVar', _dm_gaq.siteAlias]);
+     _gaq.push(['c._setDomainName', 'multiscreensite.com']);
+     _gaq.push(['c._setAllowLinker', true]);
+     _gaq.push(['c._trackPageview' ]);
+
+     pushInsiteImpressions('c._trackEvent');
+   }
+
+   function pushInsiteImpressions(category) {
+   	$.each(_dm_insite, function(idx, rule) {
+   		_gaq.push([ category, 'insite_impression' , _dm_gaq.siteAlias, rule.ruleType + '__' + rule.ruleId, ]);
+   	});
+   }
+(function() {
+	var ga = document.createElement('script');
+	ga.type = 'text/javascript';
+	ga.async = true;
+  
+	ga.src = 'https://ssl.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(ga, s);
+})();
+
+  </script>
+<script type="text/javascript" id="d_track_sp">
+;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
+};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
+n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","//d32hwlnfiv2gyn.cloudfront.net/sp-2.0.0-dm-0.1.min.js","snowplow"));
+window.dmsnowplow  = window.snowplow;
+
+dmsnowplow('newTracker', 'cf', 'd32hwlnfiv2gyn.cloudfront.net', { // Initialise a tracker
+  appId: 'da8a4922'
+});
+
+dmsnowplow('trackPageView')
+$.each(_dm_insite, function(idx, rule) {
+	//('trackStructEvent', 'category','action','label','property','value');
+			// Specifically in popup only the client knows if it is shown or not so we don't always want to track its impression here
+	        // the tracking is in popup.js
+			if (rule.actionName !== "popup") {
+                dmsnowplow('trackStructEvent', 'insite', 'impression', rule.ruleType, rule.ruleId);
+            }
+ 			$(document).ready(function(){
+ 				$.DM.events.trigger('event-ruleTriggered', {value: rule})}
+ 			);
+ 		});
+</script>
+   <div style="display:none;" id="P6iryBW0Wu"></div>
+
+<!-- photoswipe markup -->
+
+
+
+
+
+
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Fechar (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Compartilhar"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Alternar tela cheia "></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Aumentar/diminuir zoom"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Anterior (seta para esquerda)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Próximo (seta para a direita)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="fb-root"
+        data-locale="pt_PT"></div>
+
+<!-- Alias: da8a4922 -->
+<div class="dmPopupMask" id="dmPopupMask"></div>
+<div id="dmPopup" class="dmPopup">
+	<div class="dmPopupCloseWrapper"> <div class="dmPopupClose dm-common-icons-close oneIcon" onclick="dmHidePopup(event);"></div> </div>
+ 	<div class="dmPopupTitle"> <span></span> Share by:</div> 
+	<div class="data"></div>
+</div><script id="d_track_personalization">
+// Collects client data and updates cookies used by smart sites
+var expireDays = 365,visitLength = 30 * 60000;
+$.setCookie("dm_timezone_offset", (new Date()).getTimezoneOffset(), expireDays);
+function setSmartSiteCookies() {
+	setSmartSiteCookiesInternal("dm_this_page_view","dm_last_page_view","dm_total_visits","dm_last_visit");
+}
+$.DM.events.on("afterAjax", setSmartSiteCookies);
+setSmartSiteCookies();
+</script>
+<script type="text/javascript">
+    
+    Parameters.NavigationAreaParams.MoreButtonText = 'MORE';
+    
+    Parameters.NavigationAreaParams.LessButtonText = 'LESS';
+    Parameters.HomeLinkText = 'Home';
+    </script>
+
+<script>
+
+    jQuery(window).load(function () {
+        try {
+            jQuery.DM.updateIOSHeight();
+        } catch (e) {
+        }
+        ;
+    });
+</script>
+<script>
+    dmAPI.loadScript('https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js', function () {
+        dmAPI.runOnReady('lozadInit', function () {
+            window.document.querySelectorAll('img.lazy').forEach(function (img) {
+                img.addEventListener('load', function (event) {
+                    var img = event.target;
+                    img.style.filter = 'blur(0)';
+                    setTimeout(function () {
+                        $(img).closest('.imageWidget').addClass('lazyLoaded');
+                    }, 250)
+                });
+            });
+            lozad('.lazy', {
+                threshold: 0.1,
+                loaded: function (element) {
+                    if (element.getAttribute('data-background-image')) {
+                        element.style.setProperty(
+                            'background-image',
+                            "url('" + element.getAttribute('data-background-image') + "')",
+                            "important"
+                        );
+                    }
+                }
+            }).observe();
+        });
+    });
+</script>
+<!--  End Script tags -->
+
+</body>
+</html>
